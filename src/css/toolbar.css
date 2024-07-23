@@ -1,0 +1,214 @@
+#toolbarContainer {
+    width: 100%;
+    height: 40px;
+    background-color: #3a3a3f;
+    border-bottom: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    position: relative;
+    z-index: 10;
+    font-family: 'Roboto', sans-serif;
+}
+
+.toolbarSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    margin-right: 5px;
+}
+
+.toolbarButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+.toolbarButton i {
+    color: #fff;
+}
+
+.toolbarButton:hover {
+    background-color: #4a4a4f;
+}
+
+#scaleSelect {
+    margin: 0 10px 0 0;
+    background-color: #4a4a4f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    height: 100%;
+    padding: 0 10px;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+#scaleSelect:hover {
+    background-color: #666667;
+}
+
+#pageNumber {
+    background-color: #404044;
+    outline: none;
+    width: 45px;
+    text-align: center;
+    margin: 0 5px;
+    background-color: #38383d;
+    color: #fff;
+    border: 1px solid #888;
+    border-radius: 4px;
+    padding: 7px 5px;
+}
+
+#pageNumber:focus {
+    border: 1px solid #007eff;
+}
+
+#numPages {
+    color: #fff;
+    text-align: center;
+    padding: 1px 5px;
+}
+
+#download,
+#print {
+    display: none;
+}
+
+.findBar {
+    display: none;
+}
+
+.findBar.active {
+    display: block;
+    position: absolute;
+    top: 45px;
+    left: 55px;
+    background-color: #38383D;
+    border-radius: 2px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 3px 5px 3px 5px;
+    z-index: 20;
+}
+
+#findBox.focus {
+    background-color: #27272b !important;
+    border: 1px solid #007eff;
+    padding: 6px;
+}
+
+
+.findBar-arrow {
+    position: absolute;
+    top: -10px;
+    left: 25px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #38383D;
+}
+
+.loadingInput {
+    background-color: #404044;
+    border-radius: 2px;
+    border: 1px solid #737373;
+    padding: 5px;
+    width: 200px;
+}
+
+.loadingInput:focus-within {
+    border: 1px solid #007eff;
+}
+
+#loadingIcon.active {
+    visibility: visible;
+}
+
+#loadingIcon {
+    visibility: hidden;
+    font-size: 12px;
+}
+
+#findInput {
+    background: none;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: 12px;
+}
+
+#findbarMessageContainer {
+    display: none;
+    background-color: #d9d9d9 !important;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 2px;
+    color: #525252;
+}
+
+#findbarMessageContainer.active {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#findbarMessageContainer span {
+    text-align: center;
+    margin-right: 5px;
+    background: none;
+    color: #525252;
+}
+
+.findBar-content,
+.loadingInput,
+#findbarInputContainer,
+#findbarOptionsOneContainer,
+#findbarOptionsTwoContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 5px;
+}
+
+/* Esconde as checkboxes */
+input[type="checkbox"].toolbarField {
+    display: none;
+}
+
+/* Estiliza as labels para parecerem checkboxes */
+.toolbarLabel {
+    cursor: pointer;
+    margin: 0 5px;
+    user-select: none;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    border: 1px solid #666667;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo para checkbox marcado */
+input[type="checkbox"]:checked+.toolbarLabel {
+    background-color: #27272b !important;
+    border: 1px solid #007eff;
+}
+
+/* Estilo de hover para a label */
+.toolbarLabel:hover {
+    background-color: #666667;
+}

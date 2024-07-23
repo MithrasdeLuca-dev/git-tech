@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#page_num {
+    width: 30px;
+    text-align: center;
+}
+
+#mainContainer {
+    display: flex;
+    overflow: hidden;
+    background-color: #2a2a2e;
+    height: 100%;
+    scrollbar-color: #79797b #232327;
+}
+
+#viewerContainer {
+    flex: 1;
+    overflow: auto;
+    position: absolute;
+    top: 41px;
+    left: 200px;
+    right: 0;
+    bottom: 0;
+    transition: left 0.3s, width 0.3s;
+}
+
+#viewerContainer.recolher {
+    left: 0;
+    width: 100%;
+}
