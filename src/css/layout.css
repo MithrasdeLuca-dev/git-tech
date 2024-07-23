@@ -20,6 +20,33 @@ body {
     scrollbar-color: #79797b #232327;
 }
 
+#thumbnailContainer {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    background-color: #2a2a2e;
+    border-right: 1px solid;
+    overflow-y: auto;
+    transition: width 0.3s;
+}
+
+#thumbnailContainer.recolher {
+    width: 0;
+    display: none;
+}
+
+.thumbnail {
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.thumbnail.active {
+    background-color: #555558;
+}
+
 #viewerContainer {
     flex: 1;
     overflow: auto;
