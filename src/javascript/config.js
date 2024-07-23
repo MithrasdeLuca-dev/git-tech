@@ -41,8 +41,8 @@ pdfjsLib.getDocument(url).promise.then(function (pdfDoc) {
     pdfDocument = pdfDoc;
     pdfViewer.setDocument(pdfDoc);
     pdfLinkService.setDocument(pdfDoc, null);
-    // document.getElementById('numPages').textContent = "/ " + pdfDoc.numPages;
-    // document.getElementById('pageNumber').value = '1';
+    document.getElementById('numPages').textContent = "/ " + pdfDoc.numPages;
+    document.getElementById('pageNumber').value = '1';
     renderThumbnails(pdfDoc);
 }).catch(function (error) {
     console.error('Erro ao carregar o documento PDF:', error);
@@ -85,52 +85,52 @@ function renderThumbnails(pdfDoc) {
 }
 
 // Destaca a miniatura da página atual
-// function highlightCurrentThumbnail(pageNumber) {
-//     const thumbnails = document.querySelectorAll('.thumbnail');
-//     thumbnails.forEach(thumbnail => {
-//         if (parseInt(thumbnail.dataset.pageNumber) === pageNumber) {
-//             thumbnail.classList.add('active');
-//             scrollToThumbnail(thumbnail);
-//         } else {
-//             thumbnail.classList.remove('active');
-//         }
-//     });
-// }
+function highlightCurrentThumbnail(pageNumber) {
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    thumbnails.forEach(thumbnail => {
+        if (parseInt(thumbnail.dataset.pageNumber) === pageNumber) {
+            thumbnail.classList.add('active');
+            scrollToThumbnail(thumbnail);
+        } else {
+            thumbnail.classList.remove('active');
+        }
+    });
+}
 
 // Rolamento para a miniatura da página atual
-// function scrollToThumbnail(thumbnail) {
-//     const toolbarHeight = 45;
-//     const thumbnailContainer = document.getElementById('thumbnailContainer');
-//     const containerTop = thumbnailContainer.scrollTop;
-//     const containerBottom = containerTop + thumbnailContainer.clientHeight;
-//     const thumbnailTop = thumbnail.offsetTop - toolbarHeight;
-//     const thumbnailBottom = thumbnailTop + thumbnail.clientHeight;
+function scrollToThumbnail(thumbnail) {
+    const toolbarHeight = 45;
+    const thumbnailContainer = document.getElementById('thumbnailContainer');
+    const containerTop = thumbnailContainer.scrollTop;
+    const containerBottom = containerTop + thumbnailContainer.clientHeight;
+    const thumbnailTop = thumbnail.offsetTop - toolbarHeight;
+    const thumbnailBottom = thumbnailTop + thumbnail.clientHeight;
 
-//     if (thumbnailTop < containerTop) {
-//         thumbnailContainer.scrollTo({
-//             top: thumbnailTop,
-//             behavior: 'smooth'
-//         });
-//     } else if (thumbnailBottom > containerBottom) {
-//         thumbnailContainer.scrollTo({
-//             top: thumbnailBottom - thumbnailContainer.clientHeight,
-//             behavior: 'smooth'
-//         });
-//     }
-// }
+    if (thumbnailTop < containerTop) {
+        thumbnailContainer.scrollTo({
+            top: thumbnailTop,
+            behavior: 'smooth'
+        });
+    } else if (thumbnailBottom > containerBottom) {
+        thumbnailContainer.scrollTo({
+            top: thumbnailBottom - thumbnailContainer.clientHeight,
+            behavior: 'smooth'
+        });
+    }
+}
 
-// // Rolamento para a página específica
-// function scrollToPage(pageNumber) {
-//     const toolbarHeight = 60;
-//     const pageElement = document.querySelector(`[data-page-number="${pageNumber}"]`);
-//     if (pageElement) {
-//         const offsetTop = pageElement.offsetTop - toolbarHeight;
-//         window.scrollTo({
-//             top: offsetTop,
-//             behavior: 'smooth'
-//         });
-//     }
-// }
+// Rolamento para a página específica
+function scrollToPage(pageNumber) {
+    const toolbarHeight = 60;
+    const pageElement = document.querySelector(`[data-page-number="${pageNumber}"]`);
+    if (pageElement) {
+        const offsetTop = pageElement.offsetTop - toolbarHeight;
+        window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+        });
+    }
+}
 
 // Assinaturas de eventos
 eventBus.on('pagesinit', () => {
